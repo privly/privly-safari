@@ -1,2 +1,5 @@
-"This extension needs your help. It is a stub for an Safari browser version of the Privly Extension.":https://priv.ly
+This is a very basic version of the Privly extension for Safari. It has basic link reading capabilities, but is still under development. If you want to contribute to its development, see below.
 
+For more information on what Privly is, see https://priv.ly.
+
+The development home of Privly is at http://www.privly.org/. For information on how to join the Privly community, read this: http://www.privly.org/content/welcome-privly-development
