@@ -1,0 +1,3 @@
+[submodule "privly.safariextension/privly-applications"]
+	path = privly.safariextension/privly-applications
+	url = https://github.com/privly/privly-applications
