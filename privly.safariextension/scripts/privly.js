@@ -33,7 +33,8 @@ DEALINGS IN THE SOFTWARE.
  * @author Sambuddha Basu
  * @version 0.1.0
  **/
-
+/* global chrome */
+/* global safari */
 /**
  * @namespace
  * Script injected into the host page.
