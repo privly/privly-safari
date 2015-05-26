@@ -17,7 +17,19 @@
 	<key>CFBundleVersion</key>
 	<string>0.1.0</string>
 	<key>Chrome</key>
-	<dict/>
+	<dict>
+		<key>Context Menu Items</key>
+		<array>
+			<dict>
+				<key>Identifier</key>
+				<string>new_message</string>
+				<key>Title</key>
+				<string>New Message</string>
+			</dict>
+		</array>
+		<key>Global Page</key>
+		<string>privly.html</string>
+	</dict>
 	<key>Content</key>
 	<dict>
 		<key>Scripts</key>
