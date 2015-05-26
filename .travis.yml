@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+- "0.10"
+addons:
+  sauce_connect: true
+env:
+  global:
+  - TRAVIS_LAUNCHES_SAUCE_CONNECT=true
+  - secure: "GljUxDK7oCkqvKWzP+OZUdx8lCFJ7FuEqxPH0Cmmijh21KKfvepI2tM6YtQ6dQ3Z8BNWLt5ckvQJNrTm/n49Q+cOJh3ulzesbu0/UdAFRWd0OW0hK9MZGnoTw3DF6NbcYDxeCCiYgq6bIj897RY4fKDszlibvMIS3BgQYMd8DFs="#SAUCE_USERNAME=sammyshj(sammyshj/privly-safari)
+  - secure: "Vh+t0l6Ebj3RgQ1fwcBV2nYzKI47Pq9yB4ybMCRoAf/ULoH/8Qp55yu5A4iiP8fX0ag073cCmcKi89CWeeEm+Czes+OckBiYKISf/IZ2x/t6+T9E2nuB+zPpTj9fGudbE0FiGkZdgmlJ/VrYvyBNedjB4BiVnJO73t4HlSCSpjs="#SAUCE_ACCESS_KEY=********-****-****-****-************(sammyshj/privly-safari)
+before_script:
+- cd privly.safariextension/privly-applications/test
+- npm install -g karma-cli && npm install
+- cd $TRAVIS_BUILD_DIR
+script:
+- export NODE_PATH=$TRAVIS_BUILD_DIR'/privly.safariextension/privly-applications/test/node_modules'
+- cd test
+- ./run_each.sh ../privly.safariextension/privly-applications/test/karma.conf-ci.js
