@@ -13,7 +13,9 @@ This extension currently supports:
 * Locally served posting and injectable applications.
 * All the implemented [Injectable Applications](https://github.com/privly/privly-organization/wiki/Injectable-Applications) of the content server.
 
-## Testing/Submitting Bugs ##
+## Installing/Testing/Submitting Bugs ##
+
+The installation instructions are found at [Safari Extension Development Installation](https://priv.ly/pages/develop.html#SafariExtension).
 
 Extension integration test cases are found at [test.privly.org](http://test.privly.org). If you have discovered a bug, only [open a public issue](https://github.com/privly/privly-safari/issues/new) on GitHub if it could not possibly be a security related bug. If the bug affects the security of the system, please report it privately by writing an email to [privly@privly.org](mailto:privly@privly.org). We will then fix the bug and follow a process of responsible disclosure.
 
