@@ -16,6 +16,10 @@ function performCommand(event) {
   if (event.command === "new_message") {
     safari.application.activeBrowserWindow.openTab().url = safari.extension.baseURI + "privly-applications/Message/new.html";
   }
+  else if (event.command === "privly_toolbar") {
+    // Show the menu when the privly icon is clicked
+    safari.extension.toolbarItems[0].showPopover();
+  }
 }
 
 safari.application.addEventListener("command", performCommand, false);
