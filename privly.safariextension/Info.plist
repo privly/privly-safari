@@ -29,6 +29,34 @@
 		</array>
 		<key>Global Page</key>
 		<string>privly.html</string>
+		<key>Popovers</key>
+		<array>
+			<dict>
+				<key>Filename</key>
+				<string>popover.html</string>
+				<key>Height</key>
+				<real>30</real>
+				<key>Identifier</key>
+				<string>privly_popover</string>
+				<key>Width</key>
+				<real>200</real>
+			</dict>
+		</array>
+		<key>Toolbar Items</key>
+		<array>
+			<dict>
+				<key>Identifier</key>
+				<string>privly_toolbar</string>
+				<key>Image</key>
+				<string>img/logo_128.png</string>
+				<key>Include By Default</key>
+				<true/>
+				<key>Label</key>
+				<string>Privly</string>
+				<key>Popover</key>
+				<string>privly_popover</string>
+			</dict>
+		</array>
 	</dict>
 	<key>Content</key>
 	<dict>
@@ -36,7 +64,8 @@
 		<dict>
 			<key>End</key>
 			<array>
-				<string>scripts/privly.js</string>
+				<string>scripts/content_scritps/privly.js</string>
+				<string>scripts/content_scritps/handle_privly_execution.js</string>
 			</array>
 		</dict>
 	</dict>

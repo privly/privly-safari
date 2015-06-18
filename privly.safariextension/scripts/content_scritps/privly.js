@@ -903,4 +903,12 @@ var privly = {
   }
 };
 
-privly.start();
+/**
+ * In order to launch the content script loaded in each iframe of the page
+ * (especially the dynamically generated ones) it is needed to tell the
+ * background script (reading_process.js) via a message the current operating
+ * mode. If it receives a confirmation, then privly.start() is called.
+ * The check for the confirmation is done in the content script
+ * (handle_privly_execution.js).
+ */
+safari.self.tab.dispatchMessage("shouldStartPrivly?");
