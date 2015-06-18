@@ -45,10 +45,10 @@ runTest () {
 }
 
 # These are the scripts that will be loaded for every test
-commonScripts="vendor/jquery.min.js"
+commonScripts="vendor/jquery.min.js,shared/javascripts/*.js"
 
 # Each line below executes the scripts in order in the context of the browsers.
-runTest "$commonScripts,../../test/sample_test.js"
+runTest "$commonScripts,../scripts/background_scripts/first_run.js,../../test/first_run.js,../scripts/popover.js,../../test/popover.js"
 
 if [ ! $ISFAIL -eq 0 ]
 then

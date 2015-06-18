@@ -47,8 +47,11 @@ var firstRun = {
       ls.setItem("glyph_cells", glyph_cells);
     }
 
-    // Finally, open the first-run page
-    safari.application.activeBrowserWindow.openTab().url = safari.extension.baseURI + "privly-applications/Pages/ChromeFirstRun.html";
+    if (typeof safari !== "undefined" && safari.application !== undefined) {
+
+      // Finally, open the first-run page
+      safari.application.activeBrowserWindow.openTab().url = safari.extension.baseURI + "privly-applications/Pages/ChromeFirstRun.html";
+    }
   },
 
   /**

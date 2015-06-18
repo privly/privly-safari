@@ -11,7 +11,9 @@
  */
 function extensionStateChange(toShow, toHide) {
 
-  safari.extension.globalPage.contentWindow.modalButton.modeChange();
+  if (typeof safari !== "undefined" && safari.extension !== undefined) {
+    safari.extension.globalPage.contentWindow.modalButton.modeChange();
+  }
 
   // Update the UI
   $(toShow).show();
