@@ -15,4 +15,6 @@ before_script:
 script:
 - export NODE_PATH=$TRAVIS_BUILD_DIR'/privly.safariextension/privly-applications/test/node_modules'
 - cd test
-- ./run_each.sh ../privly.safariextension/privly-applications/test/karma.conf-ci.js
+- "if [ ${TRAVIS_PULL_REQUEST} = 'false' ]; then ./run_each.sh ../privly.safariextension/privly-applications/test/karma.conf-ci.js; fi" #Run the unit tests
+- "cd .."
+- "if [ ${TRAVIS_PULL_REQUEST} = 'false' ]; then cat ./privly.safariextension/privly-applications/test/coverage/*.lcov | ./privly.safariextension/privly-applications/test/node_modules/coveralls/bin/coveralls.js; fi" # Send the coverage results to coveralls
