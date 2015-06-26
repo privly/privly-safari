@@ -19,12 +19,20 @@ This documentation was generated |today|.
 
 
 Official Releases:
-==================
+------------------
 
 .. toctree::
    :maxdepth: 2
 
    releases
+
+Documentation:
+--------------
+
+.. toctree::
+   :maxdepth: 2
+
+   README
 
 Indices and tables
 ==================
