@@ -43,6 +43,20 @@ function deactivateExtension() {
   extensionStateChange("#activateExtension", "#deactivateExtension");
 }
 
+/**
+ * Helper function to open new tabs from the links.
+ */
+function openPopoverPage() {
+
+  /* istanbul ignore if */
+  if (typeof safari !== "undefined" && safari.application !== undefined) {
+    safari.application.activeBrowserWindow.openTab().url = safari.extension.baseURI + this.getAttribute("data-popover-path");
+  }
+}
+
 // Set the activation UI
 $("#deactivateExtension").click(deactivateExtension);
 $("#activateExtension").click(activateExtension);
+
+// Open new windows from the links
+$(".popover_data").click(openPopoverPage);
