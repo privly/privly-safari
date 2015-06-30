@@ -25,11 +25,11 @@ describe ("Popover Suite", function() {
     expect(document.getElementById("deactivateExtension").style.display).toMatch("");
   });
 
-  if("popover element changes properly on deactivation", function() {
+  it("popover element changes properly on deactivation", function() {
 
     // Create the expected DOM
-    var activateElement = $('<a/>', {id: "activateElement", style: "display: none"});
-    var deactivateElement = $('<a/>', {id: "deactivateElement"});
+    var activateElement = $('<a/>', {id: "activateExtension", style: "display: none"});
+    var deactivateElement = $('<a/>', {id: "deactivateExtension"});
     $(document.body).append(activateElement);
     $(document.body).append(deactivateElement);
 

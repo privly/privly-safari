@@ -47,6 +47,7 @@ var firstRun = {
       ls.setItem("glyph_cells", glyph_cells);
     }
 
+    /* istanbul ignore if */
     if (typeof safari !== "undefined" && safari.application !== undefined) {
 
       // Finally, open the first-run page

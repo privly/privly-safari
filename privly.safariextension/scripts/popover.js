@@ -11,6 +11,7 @@
  */
 function extensionStateChange(toShow, toHide) {
 
+  /* istanbul ignore if */
   if (typeof safari !== "undefined" && safari.extension !== undefined) {
     safari.extension.globalPage.contentWindow.modalButton.modeChange();
   }
