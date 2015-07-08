@@ -5,7 +5,7 @@
 	<key>Author</key>
 	<string>Sambuddha Basu, Jesse Pollak</string>
 	<key>Builder Version</key>
-	<string>10600.4.10.7</string>
+	<string>10600.7.12</string>
 	<key>CFBundleDisplayName</key>
 	<string>Privly</string>
 	<key>CFBundleIdentifier</key>
@@ -48,7 +48,7 @@
 				<key>Identifier</key>
 				<string>privly_toolbar</string>
 				<key>Image</key>
-				<string>img/logo_128.png</string>
+				<string>img/extension_on.png</string>
 				<key>Include By Default</key>
 				<true/>
 				<key>Label</key>
