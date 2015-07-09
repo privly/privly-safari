@@ -30,6 +30,12 @@ function activateExtension() {
 
   // Call the helper function to make necessary changes
   extensionStateChange("#deactivateExtension", "#activateExtension");
+
+  // Change the toolbar item image to denote extension is on
+  /* istanbul ignore if */
+  if (typeof safari !== "undefined" && safari.extension !== undefined) {
+    safari.extension.toolbarItems[0].image = safari.extension.baseURI + 'img/extension_on.png';
+  }
 }
 
 /**
@@ -41,6 +47,12 @@ function deactivateExtension() {
 
   // Call the helper function to make necessary changes
   extensionStateChange("#activateExtension", "#deactivateExtension");
+
+  // Change the toolbar item image to denote extension is off
+  /* istanbul ignore if */
+  if (typeof safari !== "undefined" && safari.extension !== undefined) {
+    safari.extension.toolbarItems[0].image = safari.extension.baseURI + 'img/extension_off.png';
+  }
 }
 
 /**
