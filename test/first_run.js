@@ -11,8 +11,9 @@ describe ("First Run Suite", function() {
     // The firstRun.checkFirstRun() is called in first_run.js
     expect(ls.getItem("version")).toMatch("0.1.0");
     expect(ls.getItem("posting_content_server_url")).toBeDefined();
-    expect(ls.getItem("glyph_color")).toBeDefined();
-    expect(ls.getItem("glyph_cells")).toBeDefined();
+    expect(ls.getItem("options/glyph")).toBeDefined();
+    expect(ls.getItem("options/glyph").cells).toBeDefined();
+    expect(ls.getItem("options/glyph").color).toBeDefined();
   });
 
 });
