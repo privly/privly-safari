@@ -22,29 +22,25 @@ var firstRun = {
   initializeApplication: function() {
 
     // Open the first run page only on new installations.
-    var postingDomain = ls.getItem("posting_content_server_url");
+    var postingDomain = Privly.storage.get("posting_content_server_url");
 
     if (postingDomain === undefined || postingDomain === null) {
-      ls.setItem("posting_content_server_url", "https://privlyalpha.org");
+      Privly.storage.set("posting_content_server_url", "https://privlyalpha.org");
     }
 
     // Initialize the spoofing glyph
     // The generated string is not cryptographically secure and should not be used
     // for anything other than the glyph.
-    if (ls.getItem("glyph_cells") === undefined) {
+    if (Privly.glyph.getGlyph() === null) {
 
       // Dissable the posting button by default if the user already has
       // the extension installed.
-      if (ls.getItem("posting_content_server_url") !== undefined) {
-        ls.setItem("Options:DissableButton", "true");
+      if (Privly.storage.get("posting_content_server_url") !== undefined) {
+        Privly.storage.set("Options:DissableButton", "true");
       }
 
-      ls.setItem("glyph_color", Math.floor(Math.random()*16777215).toString(16));
-      var glyph_cells = ((Math.random() < 0.5) ? "false" : "true");
-      for(var i = 0; i < 14; i++) {
-        glyph_cells += "," + ((Math.random() < 0.5) ? "false" : "true");
-      }
-      ls.setItem("glyph_cells", glyph_cells);
+      // Generate a new glyph for the current user
+      Privly.glyph.generateGlyph();
     }
 
     /* istanbul ignore if */
@@ -61,14 +57,21 @@ var firstRun = {
   checkFirstRun: function() {
 
     // Set the expected version to compare against the stored version
-    // todo, set this dynamically
-    var runningVersion = "0.1.0";
-    var lastRunVersion = ls.getItem("version");
+    // Set the expected version dynamically if possible
+
+    var runningVersion;
+    /* istanbul ignore if */
+    if (typeof safari !== "undefined" && safari.extension !== undefined) {
+      runningVersion = safari.extension.displayVersion;
+    } else {
+      runningVersion = "0.1.0";
+    }
+    var lastRunVersion = Privly.storage.get("version");
 
     if (lastRunVersion !== runningVersion) {
 
       // Set this first or else it will open repeatedly on new Xul overlays
-      ls.setItem("version", runningVersion);
+      Privly.storage.set("version", runningVersion);
       firstRun.initializeApplication();
     }
   }

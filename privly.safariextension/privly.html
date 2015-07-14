@@ -4,7 +4,14 @@
 
     <title>Privly Safari Extension</title>
 
+    <!-- Tells context_messenger.js that this is the background script -->
+    <meta id="is-background-script">
+
     <!-- include scripts -->
+    <script type="text/javascript" src="privly-applications/shared/javascripts/storage.js"></script>
+    <script type="text/javascript" src="privly-applications/shared/javascripts/context_messenger.js"></script>
+    <script type="text/javascript" src="privly-applications/shared/javascripts/options.js"></script>
+    <script type="text/javascript" src="privly-applications/shared/javascripts/glyph.js"></script>
     <script type="text/javascript" src="privly-applications/shared/javascripts/local_storage.js"></script>
     <script type="text/javascript" src="scripts/background_scripts/first_run.js"></script>
     <script type="text/javascript" src="scripts/background_scripts/handle_command_event.js"></script>
