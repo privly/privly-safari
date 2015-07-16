@@ -36,7 +36,7 @@ var firstRun = {
       // Dissable the posting button by default if the user already has
       // the extension installed.
       if (Privly.storage.get("posting_content_server_url") !== undefined) {
-        Privly.storage.set("Options:DissableButton", "true");
+        Privly.options.setPrivlyButtonEnabled(false);
       }
 
       // Generate a new glyph for the current user
