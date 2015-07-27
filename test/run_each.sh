@@ -48,7 +48,7 @@ runTest () {
 commonScripts="vendor/jquery.min.js,shared/javascripts/*.js"
 
 # Each line below executes the scripts in order in the context of the browsers.
-runTest "$commonScripts,../scripts/background_scripts/first_run.js,../../test/first_run.js,../scripts/popover.js,../../test/popover.js"
+runTest "$commonScripts,../scripts/background_scripts/first_run.js,../../test/first_run.js,../scripts/popover.js,../../test/popover.js,../scripts/background_scripts/mirror_local_storage.js,../../test/mirror_local_storage.js"
 
 if [ ! $ISFAIL -eq 0 ]
 then
