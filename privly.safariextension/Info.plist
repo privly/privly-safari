@@ -24,7 +24,7 @@
 				<key>Identifier</key>
 				<string>new_message</string>
 				<key>Title</key>
-				<string>New Message</string>
+				<string>Privly: New Message</string>
 			</dict>
 		</array>
 		<key>Global Page</key>
@@ -64,8 +64,9 @@
 		<dict>
 			<key>End</key>
 			<array>
-				<string>scripts/content_scritps/privly.js</string>
-				<string>scripts/content_scritps/handle_privly_execution.js</string>
+				<string>scripts/content_scripts/privly.js</string>
+				<string>scripts/content_scripts/handle_privly_execution.js</string>
+				<string>scripts/content_scripts/post_new_link.js</string>
 			</array>
 		</dict>
 	</dict>
