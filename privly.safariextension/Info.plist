@@ -67,6 +67,7 @@
 				<string>scripts/content_scripts/privly.js</string>
 				<string>scripts/content_scripts/handle_privly_execution.js</string>
 				<string>scripts/content_scripts/post_new_link.js</string>
+				<string>scripts/content_scripts/posting_button.js</string>
 			</array>
 		</dict>
 	</dict>
