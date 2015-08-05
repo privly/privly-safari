@@ -146,7 +146,43 @@ var postingProcess = {
   // Remembers where the PrivlyUrl will be placed based on the context menu
   postingResultTab: undefined,
   postingApplicationTab: undefined,
-  postingApplicationStartingValue: ""
+  postingApplicationStartingValue: "",
+
+  /**
+   * Sends the privly button status to the content script
+   *
+   * @param evt the message event received
+   *
+   */
+  sendButtonStatus: function(evt) {
+    if (evt.name === "privlyMessage" && evt.message === "PrivlyBtnStatus") {
+      Privly.message.messageContentScripts({PrivlyBtnStatus: Privly.options.isPrivlyButtonEnabled()});
+    }
+  },
+
+  /**
+   * Makes a new post when indicated from the privly button
+   *
+   * @param evt the message event received
+   *
+   */
+  makeNewPost: function(evt) {
+    if (evt.name === "privlyMessage" && evt.message === "newPost") {
+      postingProcess.postingHandler("", "Message");
+    }
+  },
+
+  /**
+   * Shows notification about pending post
+   *
+   * @param evt the message event received
+   *
+   */
+  showPendingPostNotification: function(evt) {
+    if (evt.name === "privlyMessage" && evt.message === "showNotification") {
+      var notification = new Notification("There is already a pending post");
+    }
+  }
 };
 
 // Attach the message and the closed tabs listeners
@@ -154,4 +190,7 @@ Privly.message.addListener(postingProcess.sendInitialContent, true);
 Privly.message.addListener(postingProcess.receiveNewPrivlyUrl, true);
 if (typeof safari !== "undefined" && safari.application !== undefined) {
   safari.application.addEventListener("close", postingProcess.tabClosed, true);
+  safari.application.addEventListener("message", postingProcess.sendButtonStatus);
+  safari.application.addEventListener("message", postingProcess.makeNewPost);
+  safari.application.addEventListener("message", postingProcess.showPendingPostNotification);
 }
