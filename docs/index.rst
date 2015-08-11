@@ -33,6 +33,17 @@ Documentation:
    :maxdepth: 2
 
    README
+   documentation
+
+Privly Safari Extension Package:
+--------------------------------
+:download:`context_menu.js <contextMenu.html>`
+
+:download:`first_run.js <firstRun.html>`
+
+:download:`modal_button.js <modalButton.html>`
+
+:download:`reading_process.js <readingProcess.html>`
 
 Indices and tables
 ==================
