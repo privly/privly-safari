@@ -35,6 +35,14 @@ Documentation:
    README
    documentation
 
+Testing
+-------
+
+.. toctree::
+   :maxdepth: 2
+
+   testing
+
 Privly Safari Extension Package:
 --------------------------------
 :download:`context_menu.js <contextMenu.html>`
