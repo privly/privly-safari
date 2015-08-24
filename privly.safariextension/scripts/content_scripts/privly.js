@@ -380,10 +380,10 @@ var privly = {
        };
 
     //Styling and display attributes
-     for(var key in attrs) 
-     {
-       iFrame.setAttribute(key, attrs[key]);
-     }
+    for(var key in attrs)
+    {
+      iFrame.setAttribute(key, attrs[key]);
+    }
 
     //Determines whether the element will be shown after it is toggled.
     //This allows for the button to turn on and off the display of the
@@ -836,27 +836,50 @@ var privly = {
   started: false,
 
   /**
+   * Variable indicates whether the iframe that contains the information,
+   * is blocked by the Content Security Policy(CSP).
+   */
+  blockedByCSP: true,
+
+  /**
    * Start this content script if it has not already been started.
    */
   start: function(){
     "use strict";
     if ( !privly.started ) {
 
-      privly.toggleInjection();
+      // Create an iframe to check if CSP of host page allows iframe injection
+      var iFrame = document.createElement('iframe');
+      iFrame.setAttribute("style", "display: none;");
+      iFrame.setAttribute("src", safari.extension.baseURI + "CSP_iframe.html");
 
-      privly.started = true;
-
-      //This is mostly here for Google Chrome.
-      //Google Chrome will inject the top level script after the load event,
-      //and subsequent iframes after before the load event.
-      if (document.readyState === "complete") {
-        privly.addListeners();
-        privly.dispatchResize();
-      } else {
-        //attach listeners for running Privly
-        privly.addEvent(window, 'load', privly.addListeners);
-        privly.addEvent(window, 'load', privly.dispatchResize);
+      iFrame.onload = function() {
+        privly.blockedByCSP = false;
       }
+
+      document.body.appendChild(iFrame);
+
+      // Give the iframe 0.2s to load and if the test is successful, start
+      // the content script.
+      setTimeout(function() {
+        if (privly.blockedByCSP === false) {
+          privly.toggleInjection();
+
+          privly.started = true;
+
+          //This is mostly here for Google Chrome.
+          //Google Chrome will inject the top level script after the load event,
+          //and subsequent iframes after before the load event.
+          if (document.readyState === "complete") {
+            privly.addListeners();
+            privly.dispatchResize();
+          } else {
+            //attach listeners for running Privly
+            privly.addEvent(window, 'load', privly.addListeners);
+            privly.addEvent(window, 'load', privly.dispatchResize);
+          }
+        }
+      }, 200);
 
     }
   },
