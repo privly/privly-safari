@@ -106,6 +106,26 @@ todo_include_todos = False
 
 # -- Options for HTML output ----------------------------------------------
 
+# For theme, use alabaster, from https://github.com/bitprophet/alabaster
+import alabaster
+
+html_theme_path = [alabaster.get_path()]
+extensions.append('alabaster')
+html_sidebars = {
+    '**': [
+        'about.html', 'navigation.html', 'searchbox.html',
+    ]
+}
+html_theme_options = {
+    'logo': 'logo_128.png',
+    'github_user': 'privly',
+    'github_repo': 'privly-safari',
+    'logo_name': 'true',
+    'description': 'Privly Safari Extension',
+    'logo_text_align': 'center',
+    'github_banner': 'true',
+}
+
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 html_theme = 'alabaster'
@@ -137,7 +157,7 @@ html_theme = 'alabaster'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ['../privly.safariextension/img']
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
