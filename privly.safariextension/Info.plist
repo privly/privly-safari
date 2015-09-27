@@ -74,7 +74,7 @@
 	<key>Description</key>
 	<string>The official Privly Safari browser extension.</string>
 	<key>DeveloperIdentifier</key>
-	<string>34B3M269R6</string>
+	<string>NW49B9S472</string>
 	<key>ExtensionInfoDictionaryVersion</key>
 	<string>1.0</string>
 	<key>Permissions</key>
@@ -87,6 +87,8 @@
 			<string>All</string>
 		</dict>
 	</dict>
+	<key>Update Manifest URL</key>
+	<string>https://raw.githubusercontent.com/privly/privly-safari/master/privly.safariextension/Update.plist</string>
 	<key>Website</key>
 	<string>http://priv.ly</string>
 </dict>
