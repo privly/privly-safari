@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Extension Updates</key>
+	<array>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.privly.privly</string>
+			<key>Developer Identifier</key>
+			<string>NW49B9S472</string>
+			<key>CFBundleVersion</key>
+			<string>0.1.0</string>
+			<key>CFBundleShortVersionString</key>
+			<string>0.1.0</string>
+			<key>URL</key>
+			<string>https://priv.ly/assets/extensions/safari/privly.safariextz</string>
+		</dict>
+	</array>
+</dict>
+</plist>
