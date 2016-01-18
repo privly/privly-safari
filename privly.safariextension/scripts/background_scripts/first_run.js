@@ -75,7 +75,7 @@ var firstRun = {
       firstRun.initializeApplication();
     }
   }
-}
+};
 
 // Run this script
 firstRun.checkFirstRun();

@@ -301,8 +301,8 @@ var privly = {
       elements.forEach(
         function(a){
           // Optimization
-          if (  a.textContent.indexOf("privlyInject1") <= 0 
-            || ! privly.correctIndirection.testAndCopyOver(a, a.textContent) ) {
+          if (  a.textContent.indexOf("privlyInject1") <= 0 ||
+            ! privly.correctIndirection.testAndCopyOver(a, a.textContent) ) {
             notUpdated.push(a);
           }
       });
@@ -752,7 +752,7 @@ var privly = {
    */
   toggleInjectionHelper: function(elements, displayStyle) {
 
-    "use strict"; 
+    "use strict";
     var i;
     for(i = 0; i < elements.length; i++) {
       var element = elements[i];
@@ -855,7 +855,7 @@ var privly = {
 
       iFrame.onload = function() {
         privly.blockedByCSP = false;
-      }
+      };
 
       document.body.appendChild(iFrame);
 
