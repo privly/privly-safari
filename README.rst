@@ -76,6 +76,8 @@ Resources
 | `Development Content Server <https://dev.privly.org>`__
 | `Download Extension <https://priv.ly/pages/download>`__
 
+You can `install <https://safari-extensions.apple.com/details/?id=com.privly.privly-NW49B9S472>`__ the latest release version of the extension from Safari Extensions Gallery.
+
 Contacts
 --------
 
